@@ -4,42 +4,9 @@
     Smart people learn from everything and everyone, average people from their
     experience, stupid people already, have all the answers
   </p>
-  <p>Please Check console for the result.</p>
+  <p>
+    Please Check console for the result or could run command `node script.js`
+  </p>
 </div>
 
-<script>
-  //declaring global variable, so that no need get longest length again and again
-  var longestLength = 0;
-
-  function longer(longest, currentWord) {
-    let currentWordLength = currentWord.length;
-
-    if (currentWordLength > longestLength) {
-      longestLength = currentWordLength;
-      return currentWord;
-    }
-    if (currentWordLength === longestLength) {
-      return countVowel(currentWord) > countVowel(longest)
-        ? currentWord
-        : longest;
-    }
-    return longest;
-  }
-
-  function longestWord(str) {
-    var words = str.split(/[ ,]+/);
-    return words.reduce(longer);
-  }
-
-  function countVowel(str) {
-    //find the count of vowels
-    const count = str.match(/[aeiou]/gi).length;
-    return count;
-  }
-
-  console.log(
-    longestWord(
-      "Smart people learn from everything and everyone, average people from their experience, stupid people already, have all the answers"
-    )
-  );
-</script>
+<script src="script.js"></script>
